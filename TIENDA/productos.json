@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Teclado mecánico",
+    "descripcion": "Teclas cómodas con iluminación.",
+    "precio": 59.99,
+    "icono": "⌨️"
+  },
+  {
+    "id": 2,
+    "nombre": "Mouse inalámbrico",
+    "descripcion": "Diseño ligero y preciso.",
+    "precio": 29.99,
+    "icono": "🖱️"
+  },
+  {
+    "id": 3,
+    "nombre": "Audífonos gamer",
+    "descripcion": "Sonido envolvente y micrófono.",
+    "precio": 44.50,
+    "icono": "🎧"
+  },
+  {
+    "id": 4,
+    "nombre": "Mousepad XL",
+    "descripcion": "Superficie amplia y antideslizante.",
+    "precio": 19.99,
+    "icono": "🟪"
+  }
+]
