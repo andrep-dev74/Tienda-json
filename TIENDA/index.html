@@ -3,32 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixel Periféricos</title>
+  <title>Tienda Pixel</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="encabezado">
-    <h1>Pixel Periféricos</h1>
-    <p>Accesorios para tu espacio de juego y trabajo</p>
+    <div>
+      <h1>Tienda Pixel</h1>
+      <p>Productos para tu día a día</p>
+    </div>
+    <button id="ver-cesta" class="boton boton-cesta">
+      Ver cesta <span id="contador-cesta">0</span>
+    </button>
   </header>
 
   <main class="contenedor">
-    <section>
-      <h2>Productos</h2>
-      <div id="productos" class="rejilla"></div>
-    </section>
+    <section aria-labelledby="titulo-catalogo">
+      <h2 id="titulo-catalogo">Catálogo</h2>
 
-    <aside class="carrito">
-      <h2>Tu carrito</h2>
-      <ul id="lista-carrito"></ul>
-      <p id="carrito-vacio">Todavía no agregaste productos.</p>
-      <p class="total">Total: <strong id="total">$0.00</strong></p>
-      <button id="vaciar-carrito" class="boton boton-secundario">
-        Vaciar carrito
-      </button>
-    </aside>
+      <div class="controles">
+        <input
+          id="buscador"
+          type="search"
+          placeholder="Buscar productos..."
+          aria-label="Buscar productos"
+        >
+        <select id="ordenar" aria-label="Ordenar productos">
+          <option value="default">Ordenar por...</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="nombre">Nombre: A-Z</option>
+          <option value="stock">Stock disponible</option>
+        </select>
+      </div>
+
+      <nav id="filtros-categoria" class="filtros" aria-label="Categorías"></nav>
+      <div id="productos" class="rejilla"></div>
+      <p id="mensaje-catalogo" class="mensaje" hidden></p>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <div id="modal-cesta" class="modal" hidden>
+    <section
+      class="modal-contenido"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="titulo-cesta"
+    >
+      <button id="cerrar-modal" class="cerrar" aria-label="Cerrar cesta">×</button>
+      <h2 id="titulo-cesta">Tu cesta</h2>
+      <p id="datos-envio" class="datos-envio"></p>
+      <ul id="lista-cesta" class="lista-cesta"></ul>
+      <p id="cesta-vacia" class="mensaje">La cesta está vacía.</p>
+      <p class="total">Total: <strong id="total">$0.00</strong></p>
+      <button id="finalizar-compra" class="boton">Finalizar compra</button>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

@@ -5,37 +5,103 @@
 body {
   margin: 0;
   background: #f4f6fb;
-  color: #202338;
+  color: #25263a;
   font-family: Arial, sans-serif;
 }
 
 .encabezado {
-  padding: 28px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px max(24px, calc((100% - 1100px) / 2));
   background: #22264a;
   color: white;
-  text-align: center;
 }
 
-.encabezado h1 {
-  margin: 0 0 8px;
+.encabezado h1,
+.encabezado p {
+  margin: 0 0 6px;
 }
 
 .encabezado p {
-  margin: 0;
   color: #d8dcf4;
 }
 
 .contenedor {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 28px;
   max-width: 1100px;
   margin: 32px auto;
   padding: 0 20px;
 }
 
-h2 {
-  margin-top: 0;
+.controles {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+input,
+select {
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #d4d6e2;
+  border-radius: 7px;
+  background: white;
+  font: inherit;
+}
+
+#buscador {
+  flex: 1;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 22px;
+}
+
+.boton,
+.boton-filtro {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 7px;
+  background: #5b5ce2;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+.boton:hover,
+.boton-filtro:hover {
+  background: #4748c4;
+}
+
+.boton-filtro {
+  background: #e6e7f2;
+  color: #30324a;
+}
+
+.boton-filtro.activo {
+  background: #5b5ce2;
+  color: white;
+}
+
+.boton-cesta {
+  white-space: nowrap;
+}
+
+#contador-cesta {
+  display: inline-grid;
+  min-width: 23px;
+  height: 23px;
+  margin-left: 5px;
+  padding: 0 5px;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: #4748c4;
+  font-weight: bold;
 }
 
 .rejilla {
@@ -44,82 +110,135 @@ h2 {
   gap: 18px;
 }
 
-.producto,
-.carrito {
+.producto {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   border-radius: 12px;
   background: white;
   box-shadow: 0 4px 14px #20233812;
 }
 
-.producto-icono {
-  font-size: 42px;
-}
-
 .producto h3 {
-  margin: 12px 0 6px;
+  margin: 4px 0;
 }
 
 .producto p {
   color: #686b7e;
 }
 
-.precio {
+.producto .precio {
+  margin-top: auto;
+  color: #25263a;
   font-size: 1.15rem;
   font-weight: bold;
 }
 
-.boton {
-  width: 100%;
-  padding: 11px 14px;
+.producto small {
+  margin-bottom: 12px;
+  color: #686b7e;
+}
+
+.mensaje {
+  color: #686b7e;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  padding: 20px;
+  place-items: center;
+  background: #11132699;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-contenido {
+  position: relative;
+  width: min(100%, 560px);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 26px;
+  border-radius: 12px;
+  background: white;
+}
+
+.cerrar {
+  position: absolute;
+  top: 12px;
+  right: 16px;
   border: 0;
-  border-radius: 7px;
-  background: #5b5ce2;
-  color: white;
+  background: transparent;
+  color: #555;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 28px;
 }
 
-.boton:hover {
-  background: #4748c4;
+.datos-envio {
+  color: #555;
 }
 
-.boton-secundario {
-  background: #e8e9f2;
-  color: #30324a;
-}
-
-.boton-secundario:hover {
-  background: #d8d9e7;
-}
-
-.carrito ul {
-  margin: 0;
+.lista-cesta {
   padding: 0;
   list-style: none;
 }
 
-.item-carrito {
-  display: flex;
-  justify-content: space-between;
+.item-cesta {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
   gap: 12px;
   padding: 12px 0;
   border-bottom: 1px solid #eee;
 }
 
-.item-carrito button {
-  border: 0;
-  background: transparent;
-  color: #c33;
+.controles-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controles-cantidad button,
+.eliminar {
+  padding: 5px 9px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
   cursor: pointer;
 }
 
-.total {
-  margin: 18px 0;
-  text-align: right;
+.eliminar {
+  color: #b42318;
 }
 
-#carrito-vacio {
-  color: #686b7e;
+.total {
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+#finalizar-compra {
+  width: 100%;
+}
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3;
+  padding: 13px 18px;
+  border-radius: 8px;
+  background: #22264a;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.toast.visible {
+  opacity: 1;
 }
 

@@ -1,30 +1,122 @@
 [
   {
     "id": 1,
-    "nombre": "Teclado mecánico",
-    "descripcion": "Teclas cómodas con iluminación.",
-    "precio": 59.99,
-    "icono": "⌨️"
+    "name": "Teclado mecánico",
+    "description": "Teclado cómodo con iluminación.",
+    "price": 59.99,
+    "stock": 12,
+    "category": "Electrónica"
   },
   {
     "id": 2,
-    "nombre": "Mouse inalámbrico",
-    "descripcion": "Diseño ligero y preciso.",
-    "precio": 29.99,
-    "icono": "🖱️"
+    "name": "Mouse inalámbrico",
+    "description": "Mouse ligero y preciso.",
+    "price": 29.99,
+    "stock": 18,
+    "category": "Electrónica"
   },
   {
     "id": 3,
-    "nombre": "Audífonos gamer",
-    "descripcion": "Sonido envolvente y micrófono.",
-    "precio": 44.50,
-    "icono": "🎧"
+    "name": "Auriculares Bluetooth",
+    "description": "Auriculares inalámbricos con sonido nítido.",
+    "price": 44.5,
+    "stock": 7,
+    "category": "Electrónica"
   },
   {
     "id": 4,
-    "nombre": "Mousepad XL",
-    "descripcion": "Superficie amplia y antideslizante.",
-    "precio": 19.99,
-    "icono": "🟪"
+    "name": "Monitor 24 pulgadas",
+    "description": "Monitor Full HD para trabajar o jugar.",
+    "price": 159.99,
+    "stock": 5,
+    "category": "Electrónica"
+  },
+  {
+    "id": 5,
+    "name": "Webcam HD",
+    "description": "Cámara web ideal para videollamadas.",
+    "price": 39.99,
+    "stock": 9,
+    "category": "Electrónica"
+  },
+  {
+    "id": 6,
+    "name": "Altavoz portátil",
+    "description": "Altavoz compacto con conexión Bluetooth.",
+    "price": 34.99,
+    "stock": 0,
+    "category": "Electrónica"
+  },
+  {
+    "id": 7,
+    "name": "Camiseta básica",
+    "description": "Camiseta de algodón suave.",
+    "price": 14.99,
+    "stock": 20,
+    "category": "Ropa"
+  },
+  {
+    "id": 8,
+    "name": "Sudadera con capucha",
+    "description": "Sudadera cómoda para los días frescos.",
+    "price": 39.99,
+    "stock": 8,
+    "category": "Ropa"
+  },
+  {
+    "id": 9,
+    "name": "Gorra clásica",
+    "description": "Gorra ajustable de estilo casual.",
+    "price": 19.99,
+    "stock": 11,
+    "category": "Ropa"
+  },
+  {
+    "id": 10,
+    "name": "Mochila urbana",
+    "description": "Mochila ligera con varios compartimentos.",
+    "price": 49.99,
+    "stock": 6,
+    "category": "Ropa"
+  },
+  {
+    "id": 11,
+    "name": "Calcetines deportivos",
+    "description": "Pack de calcetines cómodos para diario.",
+    "price": 9.99,
+    "stock": 15,
+    "category": "Ropa"
+  },
+  {
+    "id": 12,
+    "name": "Lámpara de escritorio",
+    "description": "Lámpara ajustable para tu zona de estudio.",
+    "price": 27.5,
+    "stock": 10,
+    "category": "Hogar"
+  },
+  {
+    "id": 13,
+    "name": "Taza de cerámica",
+    "description": "Taza resistente para café o té.",
+    "price": 12.99,
+    "stock": 25,
+    "category": "Hogar"
+  },
+  {
+    "id": 14,
+    "name": "Cojín decorativo",
+    "description": "Cojín suave para darle color a tu sala.",
+    "price": 21.99,
+    "stock": 4,
+    "category": "Hogar"
+  },
+  {
+    "id": 15,
+    "name": "Botella reutilizable",
+    "description": "Botella ligera para llevar tus bebidas.",
+    "price": 16.5,
+    "stock": 13,
+    "category": "Hogar"
   }
 ]
